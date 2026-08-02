@@ -241,6 +241,8 @@ MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
 # Power
+TARGET_PROVIDES_POWERHAL := true
+
 PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr \
     libqti-perfd-client
@@ -277,7 +279,6 @@ PRODUCT_SOONG_NAMESPACES += \
     bootable/deprecated-ota \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/qcom-caf/common/libqti-perfd-client \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
