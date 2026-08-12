@@ -70,6 +70,3 @@ genfscon sysfs /devices/virtual/input/input1/wakeup                             
 
 # Touchpanel
 genfscon sysfs /devices/virtual/touch/touch_dev/        u:object_r:sysfs_touchpanel:s0
-
-# USB
-genfscon sysfs /devices/platform/soc/a600000.ssusb/usb_data_enabled                  u:object_r:sysfs_usb_data_enabled:s0
