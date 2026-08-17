@@ -38,11 +38,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
     audio.usb.default \
     audio.r_submix.default \
     sound_trigger.primary.sm6150
@@ -86,11 +84,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
-
-# Bluetooth
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml
 
 # Camera
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
@@ -383,6 +376,7 @@ SOONG_CONFIG_rmnetctl_old_rmnet_data := true
 
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
+    bt \
     display \
     perf
 
