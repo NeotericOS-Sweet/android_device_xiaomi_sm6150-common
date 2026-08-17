@@ -6,8 +6,6 @@
 soong_namespace {
     imports: [
 	"hardware/qcom-caf/sm8150",
-        "hardware/google/interfaces",
-        "hardware/google/pixel",
         "hardware/xiaomi",
         "vendor/qcom/opensource/usb/etc",
     ],

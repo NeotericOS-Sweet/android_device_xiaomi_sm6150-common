@@ -197,10 +197,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/security/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
-# IRQ balance
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-
 # Kernel
 PRODUCT_ENABLE_UFFD_GC := true
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
@@ -246,13 +242,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 MSMSTEPPE := sm6150
 TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 
-# Power
-TARGET_PROVIDES_POWERHAL := true
-
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.pixel-libperfmgr \
-    libqti-perfd-client
-
 # QTI
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml \
@@ -283,8 +272,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     bootable/deprecated-ota \
-    hardware/google/interfaces \
-    hardware/google/pixel \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
@@ -396,7 +383,8 @@ SOONG_CONFIG_rmnetctl_old_rmnet_data := true
 
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
-    display
+    display \
+    perf
 
 $(call soong_config_set,tinycompress,loop_compress_read,true)
 $(call soong_config_set,tinycompress,enable_extended_compress_format,true)
