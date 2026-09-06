@@ -22,6 +22,7 @@ libmialgo_utils.so
 libmibokeh_712.so 64
 libmpbase.so 64
 libOpenCL.so
+libqti-perfd-client.so
 librelight_only.so 64
 libsdk_sr.so 64
 libsdsprpc.so
