@@ -229,7 +229,8 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     perf \
     telephony \
-    usb
+    usb \
+    vibrator
 
 # RIL
 PRODUCT_PACKAGES += \
@@ -272,13 +273,6 @@ PRODUCT_PACKAGES += \
 # Uevent
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
-
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # WiFi
 PRODUCT_PACKAGES += \
