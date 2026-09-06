@@ -225,6 +225,7 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
+    av \
     display \
     perf \
     telephony
