@@ -19,8 +19,7 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/xiaomi/sm6150-common',
-    'hardware/qcom-caf/sm8150',
-    'hardware/qcom-caf/wlan',
+    'hardware/qcom/wlan',
     'hardware/xiaomi',
     'vendor/qcom/common/system/av',
     'vendor/qcom/common/system/telephony',
