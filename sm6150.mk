@@ -226,7 +226,8 @@ TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     display \
-    perf
+    perf \
+    telephony
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml \
@@ -280,7 +281,6 @@ PRODUCT_PACKAGES += \
     xiaomi-telephony-stub
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext \
     xiaomi-telephony-stub
 
 PRODUCT_COPY_FILES += \
