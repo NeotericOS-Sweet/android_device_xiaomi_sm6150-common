@@ -22,6 +22,7 @@ namespace_imports = [
     'hardware/qcom-caf/sm8150',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
+    'vendor/qcom/common/vendor/adreno/r',
     'vendor/qcom/opensource/dataservices',
 ]
 
