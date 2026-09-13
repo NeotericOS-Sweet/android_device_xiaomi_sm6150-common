@@ -76,6 +76,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set,tinycompress,enable_extended_compress_format,true)
+$(call soong_config_set,tinycompress,loop_compress_read,true)
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -209,8 +211,7 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
-    vendor_dsp_mountpoint \
-    vendor_firmware_mnt_mountpoint
+    vendor_dsp_mountpoint
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
@@ -257,6 +258,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     bootable/deprecated-ota \
+    device/qcom/common/vendor/wlan-legacy \
+    hardware/qcom/wlan/qcwcn \
     hardware/xiaomi
 
 # Telephony
@@ -265,10 +268,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     xiaomi-telephony-stub
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti
 
 # Uevent
 PRODUCT_COPY_FILES += \
@@ -304,3 +303,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.zram.mark_idle_delay_mins=60 \
     ro.zram.first_wb_delay_mins=1440 \
     ro.zram.periodic_wb_delay_hours=24
+
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
